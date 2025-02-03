@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "../../../../inventory-service"
+		},
+		{
+			"path": "../../.."
+		},
+		{
+			"path": "../../../../payment-service"
+		},
+		{
+			"path": "../../../../user-service"
+		}
+	]
+}
