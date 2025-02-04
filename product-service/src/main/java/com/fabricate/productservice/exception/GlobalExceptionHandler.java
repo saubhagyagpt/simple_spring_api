@@ -14,29 +14,26 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(ResourceNotFoundException.class)
     public ResponseEntity<CustomErrorDetails> handleResourceNotFoundException(ResourceNotFoundException exception, WebRequest webRequest){
 
-//        CustomErrorDetails customErrorDetails = new CustomErrorDetails(
-//            LocalDateTime.now(),
-//            exception.getMessage(),
-//            webRequest.getDescription(false),
-//            "Product is not found";
-//        );
-//
-//        return new ResponseEntity<>(customErrorDetails,HttpStatus.NOT_FOUND);
-        return null;
+        CustomErrorDetails customErrorDetails = new CustomErrorDetails(
+            LocalDateTime.now(),
+            exception.getMessage(),
+            webRequest.getDescription(false),
+            "Product is not found"
+        );
+        return new ResponseEntity<>(customErrorDetails,HttpStatus.NOT_FOUND);
     }
 
     @ExceptionHandler(Exception.class)
     public ResponseEntity<CustomErrorDetails> handleGlobalException(Exception exception, WebRequest webRequest){
 
-//        CustomErrorDetails customErrorDetails = new CustomErrorDetails(
-//            LocalDateTime.now(),
-//            exception.getMessage(),
-//            webRequest.getDescription(false),
-//            "INTERNAL SERVER ERROR"
-//        );
+        CustomErrorDetails customErrorDetails = new CustomErrorDetails(
+            LocalDateTime.now(),
+            exception.getMessage(),
+            webRequest.getDescription(false),
+            "INTERNAL SERVER ERROR"
+        );
 
-//        return new ResponseEntity<>(customErrorDetails,HttpStatus.INTERNAL_SERVER_ERROR);
-        return null;
+        return new ResponseEntity<>(customErrorDetails,HttpStatus.INTERNAL_SERVER_ERROR);
     }
     
 }
